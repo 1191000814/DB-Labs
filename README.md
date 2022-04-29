@@ -1,4 +1,4 @@
-# HIT-Database-Lab
+# HIT-Database-Labs
 
 2022年春哈工大数据库系统实验(战德臣老师)
 来自19级某不知名同学(纯原创)
