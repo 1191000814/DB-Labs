@@ -1,0 +1,26 @@
+{
+	"version": "2.0.0",
+	// 下面的tasks是一个任务列表, 里面的每一个任务
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C运行程序",
+			"command": "F:\\Environment\\MinGW\\mingw64\\bin\\gcc.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"${file}",
+				"-o",
+				"D:\\Code\\C\\bin\\${fileBasenameNoExtension}.exe"
+			],
+			"options": {
+				"cwd": "F:\\Environment\\MinGW\\mingw64\\bin",
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "编译器: F:\\Environment\\MinGW\\mingw64\\bin\\gcc.exe",
+		}
+	]
+}
