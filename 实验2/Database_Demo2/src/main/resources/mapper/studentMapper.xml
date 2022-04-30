@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--表示是一个xml文件-->
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--  这个表示是mybatis的嵌入sql-->
+<mapper namespace="school.mapper.StudentMapper">
+<!--指定对应哪个接口-->
+
+<!--  select语句-->
+<!--  id对应方法名(自定义)-->
+  <select id="selectById" resultType="school.entity.Student">
+    select * from school.student where id = #{id};
+  </select>
+
+<!--  连接查询-->
+  <select id="selectAll2" resultMap="student">
+    select s.id sId, s.name sName, age sAge, d.name dName from school.student s join school.dept d
+             on s.deptId = d.id
+        <if test="group == 1">
+          group by d.id
+        </if>
+        <if test="group == 2">
+          group by s.age
+        </if>
+  </select>
+
+  <resultMap id="student" type="school.front.FrontStudent">
+    <id property="id" column="sId"/>
+    <result property="name" column="sName"/>
+    <result property="age" column="sAge"/>
+    <result property="deptName" column="dName"/>
+  </resultMap>
+
+<!--  嵌套查询-->
+
+  <select id="selectAll" resultType="school.entity.Student">
+    select * from school.student;
+  </select>
+
+  <insert id="insert">
+    insert into school.student values (#{id}, #{name}, #{age},#{deptId})
+  </insert>
+
+  <delete id="deleteById">
+    delete from school.student where id = #{id}
+  </delete>
+
+  <update id="update">
+    update school.student set name=#{name}, age=#{age}, deptId=#{deptId}
+    where id=#{id}
+  </update>
+
+</mapper>

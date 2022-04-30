@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f1f0d44e-258f-4717-9be3-4e3b7beb84cf" name="变更" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="26bcOQMIYMBQNoFp9iC9OGDB436" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;85f60534c65a32e332a0bb8243933354&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Code\Java\Database_Demo2\src\main\resources\public" />
+      <recent name="D:\Code\Java\Database_Demo2\src\main\resources\mapper" />
+      <recent name="F:\IntelliJ-IDEA\my_project\Database_Demo\src\main\java\student\utils" />
+      <recent name="F:\IntelliJ-IDEA\my_project\Database_Demo\src\main\resources\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Code\Java\Database_Demo2\src\main\resources\public\my_table" />
+      <recent name="D:\Code\Java\Database_Demo2\src\main\resources\public\template" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="student" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="school.controller" />
+      <recent name="school" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.SchoolApplication">
+    <configuration name="ParserTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Database_Demo2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="school.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="school" />
+      <option name="MAIN_CLASS_NAME" value="school.ParserTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ParserTest.testParser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Database_Demo2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="school.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="school" />
+      <option name="MAIN_CLASS_NAME" value="school.ParserTest" />
+      <option name="METHOD_NAME" value="testParser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudentTest.testInsert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Database_Demo2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="school.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="school" />
+      <option name="MAIN_CLASS_NAME" value="school.StudentTest" />
+      <option name="METHOD_NAME" value="testInsert" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudentTest.testSelectAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Database_Demo2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="school.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="school" />
+      <option name="MAIN_CLASS_NAME" value="school.StudentTest" />
+      <option name="METHOD_NAME" value="testSelectAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SchoolApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" />
+      <module name="Database_Demo2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="school.SchoolApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="school.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.StudentTest.testSelectAll" />
+      <item itemvalue="JUnit.ParserTest.test1" />
+      <item itemvalue="JUnit.ParserTest.testParser" />
+      <item itemvalue="JUnit.StudentTest.testInsert" />
+      <item itemvalue="Spring Boot.SchoolApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.SchoolApplication" />
+        <item itemvalue="JUnit.StudentTest.testSelectAll" />
+        <item itemvalue="JUnit.ParserTest.test1" />
+        <item itemvalue="JUnit.ParserTest.testParser" />
+        <item itemvalue="JUnit.StudentTest.testInsert" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="f1f0d44e-258f-4717-9be3-4e3b7beb84cf" name="变更" comment="" />
+      <created>1647695703564</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1647695703564</updated>
+      <workItem from="1647695704728" duration="4445000" />
+      <workItem from="1648021832352" duration="4898000" />
+      <workItem from="1648031125124" duration="148000" />
+      <workItem from="1648031300689" duration="2403000" />
+      <workItem from="1648109405915" duration="7391000" />
+      <workItem from="1648125561980" duration="1179000" />
+      <workItem from="1648173335710" duration="1045000" />
+      <workItem from="1648174437688" duration="1999000" />
+      <workItem from="1648197140738" duration="2704000" />
+      <workItem from="1648210898205" duration="6526000" />
+      <workItem from="1648256815411" duration="18687000" />
+      <workItem from="1648360992275" duration="10021000" />
+      <workItem from="1648789180455" duration="17673000" />
+      <workItem from="1648859521184" duration="16780000" />
+      <workItem from="1648882640474" duration="18846000" />
+      <workItem from="1648947183278" duration="8103000" />
+      <workItem from="1648970190171" duration="4421000" />
+      <workItem from="1648981512199" duration="8833000" />
+      <workItem from="1648992932471" duration="3361000" />
+      <workItem from="1649058692943" duration="496000" />
+      <workItem from="1649078554419" duration="3021000" />
+      <workItem from="1649134946085" duration="425000" />
+      <workItem from="1649595314815" duration="4415000" />
+      <workItem from="1649991430078" duration="397000" />
+      <workItem from="1649991846141" duration="18732000" />
+      <workItem from="1650356554244" duration="1134000" />
+      <workItem from="1650872646299" duration="12673000" />
+      <workItem from="1650958289755" duration="2600000" />
+      <workItem from="1650972330238" duration="2316000" />
+      <workItem from="1650984533388" duration="69000" />
+      <workItem from="1651301155676" duration="3000" />
+      <workItem from="1651301177110" duration="5909000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/school/utils/ParserParams.java</url>
+          <line>24</line>
+          <properties class="school.utils.ParserParams" method="parser">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

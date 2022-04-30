@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="school.mapper.SCMapper">
+  <select id="selectById" resultType="school.entity.SC">
+    select * from school.sc where sId = #{sId} and cId=#{cId}
+  </select>
+
+  <select id="selectAll2" resultType="school.entity.SC">
+    <choose>
+      <when test="group == 0">
+        select * from school.sc
+      </when>
+      <when test="group == 1">
+        select cId, avg(score) as score from school.sc group by cId
+      </when>
+      <when test="group == 2">
+        select cId, max(score) as score from school.sc group by cId
+      </when>
+      <when test="group == 3">
+        select cId, min(score) as score from school.sc group by cId
+      </when>
+    </choose>
+  </select>
+
+  <insert id="insert">
+    insert into school.sc values (#{sId}, #{cId}, #{score})
+  </insert>
+
+  <delete id="deleteById">
+    delete from school.sc where sId = #{sId} and cId=#{cId}
+  </delete>
+
+  <update id="update">
+    update school.sc set score=#{score}
+    where sId=#{sId} and cId=#{cId}
+  </update>
+</mapper>

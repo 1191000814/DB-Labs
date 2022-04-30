@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学生查询界面</title>
+</head>
+
+<style>
+  .box1 {
+    height: 25em;
+    width: 20em;
+    background: rgb(255, 128, 0);
+    background: -moz-linear-gradient(0deg, yellow, red);
+    background: -o-linear-gradient(0deg, yellow, red);
+    background: -webkit-linear-gradient(0deg, yellow, red);
+    background: linear-gradient(90deg, yellow, red);
+    float: left;
+  }
+  h1 {
+    color: gray;
+  }
+  @supports (text-shadow: 0 0 .3em gray) {
+    h1 {
+      color: transparent;
+      text-shadow: 0 0 .3em gray;
+    }
+  }
+  button {
+    padding: .3em .8em;
+    border: 1px solid rgba(0,0,0,.1);
+    background: #58a linear-gradient(hsla(0,0%,100%,.2),transparent);
+    border-radius: .2em;
+    box-shadow: 0 .05em .25em rgba(0,0,0,.5);
+    color: white;
+    text-shadow: 0 -.05em .05em rgba(0,0,0,.5);
+    font-size: 125%;
+    line-height: 1.5;
+  }
+  button.ok {
+    background-color: #6b0;
+  }
+  button.cancel {
+    background-color: #c00;
+  }
+  ul { --accent-color: purple; }
+  ol { --accent-color: rebeccapurple; }
+  li { background: var(--accent-color); }
+  .box2 {
+    width: 10em;
+    height: 8em;
+    float: left;
+    border: 10px solid hsla(0,0%,100%,.5);
+    background-clip: padding-box;
+    margin: 2em;
+  }
+  .box3 {
+    width: 10em;
+    height: 8em;
+    background: yellowgreen;
+    box-shadow: 0 0 0 10px #655,
+    0 0 0 15px deeppink,
+    0 2px 5px 15px rgba(0,0,0,.6);
+    float: left;
+    margin: 2em;
+  }
+  .box4 {
+    width: 10em;
+    height: 8em;
+    background: tan;
+    border-radius: .8em;
+    padding: 1em;
+    box-shadow: 0 0 0 .6em #655;
+    outline: .6em solid #655;
+    float: left;
+  }
+  .box5 {
+    width: 10em;
+    height: 8em;
+    float: left;
+    margin: 2em;
+    background: linear-gradient(45deg,
+    #fb3 25%, #58a 0, #58a 50%,
+    #fb3 0, #fb3 75%, #58a 0);
+    background-size: 30px 30px;
+  }
+  .box6 {
+    width: 10em;
+    height: 8em;
+    float: left;
+    background: #655;
+    background-image: radial-gradient(tan 30%, transparent 0),
+    radial-gradient(tan 30%, transparent 0);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+  }
+  .box7 {
+    width: 10em;
+    height: 8em;
+    float: left;
+    padding: 1em;
+    border: 1em solid transparent;
+    background: linear-gradient(white, white) padding-box,
+    repeating-linear-gradient(-45deg,
+        red 0, red 12.5%,
+        transparent 0, transparent 25%,
+        #58a 0, #58a 37.5%,
+        transparent 0, transparent 50%)
+    0 / 5em 5em;
+  }
+  @keyframes ants { to { background-position: 100% } }
+  .box8 {
+    width: 10em;
+    height: 8em;
+    float: left;
+    margin: 2em;
+    padding: 1em;
+    border: 1px solid transparent;
+    background:
+        linear-gradient(white, white) padding-box,
+        repeating-linear-gradient(-45deg,
+        black 0, black 25%, white 0, white 50%
+        ) 0 / .6em .6em;
+    animation: ants 12s linear infinite;
+  }
+  .box9 {
+    width: 10em;
+    height: 8em;
+    float: left;
+    background: blue;
+    border-radius: 50% / 50%;
+  }
+  .box10 {
+    width: 10em;
+    height: 8em;
+    float: left;
+    position: relative;
+  }
+  .box10::before {
+    margin-left: 2em;
+    content: ''; /* 用伪元素来生成一个矩形 */
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    background: #58a;
+    transform: skew(45deg);
+  }
+  .box11 {
+    margin-left: 5em;
+    width: 10em;
+    height: 8em;
+    float: left;
+  }
+  img {
+    clip-path: polygon(50% 0, 100% 50%,
+    50% 100%, 0 50%);
+    transition: 1s clip-path;
+  }
+  img:hover {
+    clip-path: polygon(0 0, 100% 0,
+    100% 100%, 0 100%);
+  }
+  .box12 {
+    width: 10em;
+    height: 8em;
+    float: left;
+    margin-left: 2em;
+    background: #58a;
+    background:
+        linear-gradient(-45deg, transparent 15px, #58a 0)
+        right,
+        linear-gradient(45deg, transparent 15px, #655 0)
+        left;/* 若使用径向渐变radial-gradient()就是变成弧形切角 */
+    background-size: 50% 100%; /*背景大小，第一个是宽度，第二个是高度 */
+    background-repeat: no-repeat;
+  }
+  .box13 {
+    margin-top: 3em;
+    width: 10em;
+    height: 8em;
+    margin-left: 2em;
+    font-variant-ligatures: common-ligatures
+    discretionary-ligatures
+    historical-ligatures;
+    float: left;
+  }
+  .box14 {
+    width: 10em;
+    height: 8em;
+    margin-left: 3em;
+    background: #203;
+    color: #ffc;
+    text-shadow: 0 0 .1em, 0 0 .3em;
+    float: left;
+  }
+  .box14 a {
+    background: #203;
+    color: white;
+    transition: 1s;
+  }
+  .box14 a:hover {/*:hover 状态下把文字本身隐藏掉，那它看起来真的就像在慢慢变模糊*/
+    color: transparent;
+    text-shadow: 0 0 .1em white, 0 0 .3em white;
+  }
+</style>
+
+<body>
+<div class="box1"><h1>css回退样式</h1></div>
+<button class="yes">YES!</button>
+<button class="ok">OK!</button>
+<button class="cancel">Cancel!</button>
+<div>
+  <ul>
+    <li>hello</li>
+    <li>world</li>
+    <li>!!!</li>
+  </ul>
+  <ol>
+    <li>hello</li>
+    <li>world</li>
+    <li>!!!</li>
+  </ol>
+</div>
+<div class="box2">
+  半透明边框
+</div>
+<div class="box3">
+  多重边框
+</div>
+<div class="box4">
+  内圆角
+</div>
+<div class="box5">
+  条纹背景
+</div>
+<div class="box6">
+  格子背景的实现
+</div>
+<div class="box7">
+  信封背景
+</div>
+<div class="box8">
+  蚂蚁行军边框
+</div>
+<div class="box9">
+  椭圆圆角
+</div>
+<div class="box10">
+  使用伪元素创建平行四边形
+</div>
+<div class="box11">
+  <img src="cat.jpeg" alt="">
+</div>
+<div class="box12">
+  切角效果
+</div>
+<div class="box13">
+  目前看不出什么效果
+  连字效果:hello my name is kangkang,welcome to China!
+</div>
+<div class="box14">
+  <a href="">文字外发光效果</a>
+</div>
+</body>
+</html>

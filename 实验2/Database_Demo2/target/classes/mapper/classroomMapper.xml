@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="school.mapper.ClassroomMapper">
+  <select id="selectById" resultType="school.entity.Classroom">
+    select * from school.classroom where id = #{id}
+  </select>
+
+  <select id="selectAll" resultType="school.entity.Classroom">
+    select * from school.classroom;
+  </select>
+
+  <insert id="insert">
+    insert into school.classroom values (#{id}, #{bId}, #{clNum})
+  </insert>
+
+  <delete id="deleteById">
+    delete from school.classroom where id = #{id}
+  </delete>
+
+  <update id="update">
+    update school.classroom set bId=#{bId}, cl_num=#{clNum}
+    where id=#{id}
+  </update>
+</mapper>

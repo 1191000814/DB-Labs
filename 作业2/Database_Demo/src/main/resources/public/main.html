@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>学生信息查询</title>
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!--引入vue-->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!--引入axios-->
+
+<!--css样式-->
+<style>
+  .box4 {
+    /*设置颜色, 样式*/
+    background: tan;
+    border-radius: .8em;
+    padding: 1em;
+    box-shadow: 0 0 0 .6em #655;
+    outline: .6em solid #655;
+    float: left;
+
+    /*设置大小*/
+    width: 500px;
+    height: auto;
+    text-align: center;
+
+    /*设置位置*/
+    position: absolute;
+    left: 550px;
+    top: 50px;
+    bottom: auto;
+    right: auto;
+
+    font: bold 18px "Microsoft YaHei";
+  }
+
+  .input_box {
+    height: 25px;
+  }
+
+  .check_box {
+    width: 20px;
+    height: 20px
+  }
+</style>
+
+<style>
+  table, table tr th, table tr td {
+    border: 1px solid black;
+    width: 20px
+  }
+
+  table {
+    width: 500px;
+    min-height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-collapse: collapse;
+  }
+</style>
+<body>
+
+<div id="app" class="box4" style="text-align: center">
+  <label>
+    <input class="check_box" type="checkbox" v-model="hasParams[0]"> 学号 <input type="text" class="input_box"
+                                                                               v-model="Sid"> <br/>
+    <input class="check_box" type="checkbox" v-model="hasParams[1]"> 姓名 <input type="text" class="input_box"
+                                                                               v-model="Sname"> <br/>
+    <input class="check_box" type="checkbox" v-model="hasParams[2]"> 年龄 从
+    <input type="text" class="input_box" v-model="SMinAge" style="width: 56px"> 到
+    <input type="text" class="input_box" v-model="SMaxAge" style="width: 56px"> <br/>
+    <input class="check_box" type="checkbox" v-model="hasParams[3]"> 性别
+    <select class="input_box" style="width: 180px" v-model="Ssex">
+      <option value="男">男</option>
+      <option value="女">女</option>
+    </select> <br/>
+    <input class="check_box" type="checkbox" v-model="hasParams[4]"> 班级
+    <input type="text" class="input_box" v-model="SclassNo"> <br/>
+    <input class="check_box" type="checkbox" v-model="hasParams[5]"> 系别
+    <select class="input_box" style="width: 180px" v-model="Sdept">
+      <option value="计算机科学">计算机科学</option>
+      <option value="软件工程">软件工程</option>
+      <option value="软件工程">信息安全</option>
+      <option value="软件工程">物联网工程</option>
+      <option value="软件工程">人工智能</option>
+      <option value="软件工程">大数据</option>
+      <option value="软件工程">生物信息</option>
+    </select> <br/>
+    <input class="check_box" type="checkbox" v-model="hasParams[6]"> 地址
+    <input type="text" class="input_box" v-model="Saddress"/> <br/><br/>
+    <button style="height: 30px; width: 200px;  background: yellow" @click="getStudent()">点击查询</button>
+    <br/>
+    <br/>
+    输出sql语句:
+    <input type="text" v-model="sql" name="输出sql语句" style="width: 400px; height: 40px;">
+  </label>
+  <br/>
+  <br/>
+  输出结果:
+  <table style="background: white">
+    <thead>
+    <tr>
+      <th>学号</th>
+      <th>姓名</th>
+      <th>年龄</th>
+      <th>性别</th>
+      <th>班级</th>
+      <th>系别</th>
+      <th>地址</th>
+    </tr>
+    <!--      遍历学生列表,展示在页面上-->
+    <tr v-for="s in Slist">
+      <td v-text="s.id"></td>
+      <td v-text="s.name"></td>
+      <td v-text="s.age"></td>
+      <td v-text="s.sex"></td>
+      <td v-text="s.classNo"></td>
+      <td v-text="s.dept"></td>
+      <td v-text="s.address"></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<!--vue的js脚本-->
+<script>
+  const app = new Vue({
+    // 创建一个vue对象
+    el: "#app",
+    // el是挂载点
+    data: {
+      Slist: [], // 当前查询结果
+
+      Sid: 1,
+      Sname: "xzq",
+      SMinAge: 20,
+      SMaxAge: 22,
+      Ssex: '男',
+      SclassNo: 1937101,
+      Sdept: '软件工程',
+      Saddress: '正心',
+      hasParams: [false, false, false, false, false, false, false],
+
+      sql: null
+    },
+    // data是数据
+
+    methods: {
+      // 注意这里是methods不是method
+      getStudent(){
+        let t = this
+        axios.get("http://localhost:8080/getStudent?id=" + t.Sid + "&name=" + t.Sname + "&minAge=" + t.SMinAge +
+            "&maxAge=" + t.SMaxAge + "&sex=" + t.Ssex + "&classNo=" + t.SclassNo + "&dept=" + t.Sdept +
+            "&address=" + t.Saddress + "&hasParams=" + t.hasParams
+            // 要用t.xxx表示data中的数据
+         )
+        // axios.get("http://localhost:8080/getStudent", {
+        //   param: {
+        //     id: t.Sid,
+        //     name: t.Sname,
+        //     minAge: t.SMinAge,
+        //     maxAge: t.SMaxAge,
+        //     sex: t.Ssex,
+        //     classNo: t.SclassNo,
+        //     dept: t.Sdept,
+        //     address: t.Saddress,
+        //     hasParams: t.hasParams
+        //   }// 要用t.xxx表示data中的数据
+        // })
+        .then(
+            function(resp){
+              // 查询结果赋值给Slist
+              if(resp.data.students.length > 0)
+                alert("查询成功!")
+              else
+                alert("查询结果为空!")
+              t.Slist = resp.data.students
+              t.sql = resp.data.sql
+            },
+            function(err){
+              alert("输入不合法: " + err)
+            }
+        )
+      }
+    }
+  })
+</script>
+
+</body>
+</html>

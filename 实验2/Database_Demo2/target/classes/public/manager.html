@@ -1,0 +1,308 @@
+<!doctype html>
+<html class="no-js" lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Amaze UI Admin table Examples</title>
+  <meta name="description" content="这是一个 table 页面">
+  <meta name="keywords" content="table">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+  <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+
+<header class="am-topbar am-topbar-inverse admin-header">
+  <div class="am-topbar-brand">
+    <strong>HIT</strong> <small>教务处后台管理模板</small>
+  </div>
+
+  <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only"
+          data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span
+      class="am-icon-bars"></span></button>
+
+  <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+    <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+      <li><a href="javascript:;"><span class="am-icon-envelope-o"></span>
+        <ul class="am-dropdown-content">
+          <li><a href="#"><span class="am-icon-user"></span> 资料</a></li>
+          <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
+          <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+        </ul>
+      </a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<div class="am-cf admin-main" id="app">
+  <!-- sidebar start -->
+  <div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
+    <div class="am-offcanvas-bar admin-offcanvas-bar">
+      <ul class="am-list admin-sidebar-list">
+        <li class="admin-parent">
+          <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}"><span class="am-icon-file"></span> 页面模块 <span
+              class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
+            <li><a href="student.html" class="am-cf"><span class="am-icon-check"></span> 学生资料<span
+                class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
+            <li><a href="course.html"><span class="am-icon-puzzle-piece"></span> 课程管理</a></li>
+            <li><a href="sc.html"><span class="am-icon-th"></span> 选课详情<span
+                class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li>
+            <li><a href="teacher.html"><span class="am-icon-calendar"></span> 教师信息</a></li>
+            <li><a href="building.html"><span class="am-icon-bug"></span> 教学楼信息</a></li>
+            <li><a href="classroom.html"><span class="am-icon-rocket"></span> 教室查询</a></li>
+            <li><a href="dept.html"><span class="am-icon-hacker-news"></span> 系别信息</a></li>
+            <li><a href="manager.html"><span class="am-icon-magic"></span> 管理员信息</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="am-panel am-panel-default admin-sidebar-panel">
+        <div class="am-panel-bd">
+          <p><span class="am-icon-bookmark"></span> tip</p>
+          <p>数据库实验2 - UI系统</p>
+        </div>
+      </div>
+
+      <div class="am-panel am-panel-default admin-sidebar-panel">
+        <div class="am-panel-bd">
+          <p><span class="am-icon-tag"></span> name</p>
+          <p>1191000814 - 肖泽强</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- sidebar end -->
+
+  <!-- content start -->
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">管理员信息</strong> / <small>manager</small></div>
+      </div>
+      <hr>
+      <div class="am-g">
+        <div class="am-u-sm-12 am-u-md-6">
+          <div class="am-btn-toolbar">
+            <div class="am-btn-group am-btn-group-xs">
+              <button v-on:click="operate='新增';show=true;" type="button" class="am-btn am-btn-default"><span class="am-icon-plus"></span> 新增</button>
+              <button v-on:click="selectAll" type="button" class="am-btn am-btn-default"><span class="am-icon-refresh"></span> 刷新</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="am-u-sm-12 am-u-md-3">
+          <div class="am-input-group am-input-group-sm">
+            <input type="text" class="am-form-field">
+            <span class="am-input-group-btn">
+            <button @click="show=false;selectAll" class="am-btn am-btn-default" type="button">查询</button>
+          </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="am-g">
+        <div class="am-u-sm-12">
+          <form class="am-form">
+            <table class="am-table am-table-striped table-main">
+              <thead>
+              <tr>
+                <th class="table-type">序号</th>
+                <th class="table-type">编号</th>
+                <th class="table-type">姓名</th>
+                <th class="table-type">工资</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr v-for="(m, i) in dataList">
+                <td>{{i + 1}}</td>
+                <td>{{m.id}}</td>
+                <td>{{m.name}}</td>
+                <td>{{m.salary}}</td>
+                <td>
+                  <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <button v-on:click="operate='确定修改';show=true;modifyData.id=m.id" type="button" class="am-btn am-btn-default">
+                        <span class="am-icon-pencil-square-o"></span> 编辑
+                      </button>
+                      <button v-on:click="show=false;deleteById(m.id)" type="button" class="am-btn am-btn-default">
+                        <span class="am-icon-trash-o"></span> 删除
+                      </button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              </tbody>
+            </table>
+            <div class="am-cf">
+              共 {{dataList.length}} 条记录
+            </div>
+            <hr/>
+          </form>
+
+          <div class="am-input-group am-input-group-sm" v-show="show"> 请输入要{{operate}}的信息-->
+            <strong>管理员编号: </strong> <input v-model="modifyData.id" style="width: 100px" type="text" class="am-form">&nbsp;&nbsp;&nbsp;
+            <strong>姓名: </strong> <input v-model="modifyData.name" style="width: 100px" type="text" class="am-form">&nbsp;&nbsp;&nbsp;
+            <strong>工资: </strong> <input v-model="modifyData.salary" style="width: 100px" type="text" class="am-form">&nbsp;&nbsp;&nbsp;
+            <span class="am-input-group-btn">
+            <button @click="modify" style="color: white; background: dodgerblue" class="am-btn" type="button">{{operate}}</button>
+            <button @click="show=false" class="am-btn" type="button">取消</button>
+          </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="admin-content-footer">
+      <hr>
+      <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+    </footer>
+
+  </div>
+  <!-- content end -->
+</div>
+
+<!--以上的不用,自己写vue.js和axios-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script>
+
+  const app = new Vue({
+    // 创建一个vue对象
+    el: "#app",
+    // el是挂载点
+    data: { // data是vue的数据
+      dataList: [], // 实体类的列表
+      show: null, // 是否显示编辑窗口
+      operate: null, // 操作
+      modifyData:{ // 文本框里的数据
+        id: null,
+        name: null,
+        salary: null
+      }
+    },
+    // data是数据
+
+    // 构造函数,自动执行
+    created: function(){
+       this.selectAll()
+    },
+
+    // 自定义函数
+    methods: {
+
+      // 选取全部
+      selectAll: function() {
+        const t = this // 必须要重新声明一次
+        axios.get("http://localhost:8080/manager/selectAll").then(
+            function(resp) { // 响应参数
+              if(resp.data.flag)
+                t.dataList = resp.data.data // 拿到的数据赋值给前端本地数据
+              else
+                alert(resp.data.data)
+            },
+            function(err) { // 响应表示xxx错误
+              alert(err)
+            }
+        )
+      },
+
+      deleteById: function(id){
+        const t = this
+        if(! confirm("确定要删除吗?")) // 弹出一个弹窗
+          return false;
+        axios.get("http://localhost:8080/manager/delete/" + id).then(
+            function(resp) {
+              if(resp.data.flag === true){
+                alert("删除成功!")
+                t.selectAll()
+              }
+              else{
+                alert(resp.data.data)
+              }
+            },
+            function(err) {
+              alert(err)
+            }
+        )
+      },
+
+      modify: function(){
+        if(this.operate === '新增')
+          this.insert()
+        else
+          this.update()
+      },
+
+      insert: function(){
+        const t = this
+        for(let item in t.modifyData){
+          if(t.modifyData[item] == null || t.modifyData[item] === ""){
+            alert("属性不能为空!")
+            return false;
+          }
+        }
+        axios.get('http://localhost:8080/manager/insert?', {
+          params:{
+            id: t.modifyData.id,
+            name: t.modifyData.name,
+            salary: t.modifyData.salary
+          }
+        }).then(
+            function(resp) {
+              if(resp.data.flag){
+                alert("新增成功!")
+                t.selectAll()
+              }
+              else{
+                alert(resp.data.data)
+              }
+            },
+            function(err) {
+              alert(err)
+            }
+        )
+      },
+
+      update: function(){
+        const t = this
+        for(let item in t.modifyData){
+          if(t.modifyData[item] == null || t.modifyData[item] === ""){
+            alert("属性不能为空!")
+            return false;
+          }
+        }
+        axios.get('http://localhost:8080/manager/update', {
+          params:{
+            id: t.modifyData.id,
+            name: t.modifyData.name,
+            salary: t.modifyData.salary
+          }
+        }).then(
+            function(resp) {
+              if(resp.data.flag){
+                alert("修改成功!")
+                t.selectAll()
+              }
+              else{
+                alert(resp.data.data)
+              }
+            },
+            function(err) {
+              alert(err)
+            }
+        )
+      }
+    }
+  })
+</script>
+</body>
+</html>

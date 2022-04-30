@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="student.mapper.StudentMapper">
+
+  <select id="getStudent" resultType="student.entity.Student">
+    select * from jdbc_test.student
+    <trim prefix="where" suffixOverrides="and">
+      <if test="hasParams[0]">id = #{student.id} and</if>
+      <if test="hasParams[1]">name like "%"#{student.name}"%" and</if>
+      <if test="hasParams[2] == true">age >= #{minAge} and age &lt;= #{maxAge} and </if>
+      <if test="hasParams[3] == true">sex = #{student.sex} and</if>
+      <if test="hasParams[4] == true">classNo = #{student.classNo} and</if>
+      <if test="hasParams[5] == true">dept = #{student.dept} and</if>
+      <if test="hasParams[6] == true">address like "%"#{student.address}"%" and</if>
+    </trim>
+
+  </select>
+</mapper>
