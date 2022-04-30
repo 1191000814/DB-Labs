@@ -11,6 +11,6 @@ int main(){
     generate();
     firstSort();
     secondSort();
-    printf("程序共运行了%fs", ((double) (clock()-start)) / CLK_TCK);
+    printf("??????????%fs", ((double) (clock()-start)) / CLK_TCK);
     return 0;
 }
